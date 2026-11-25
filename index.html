@@ -758,7 +758,7 @@ input,select{width:100%; padding:13px; border-radius:12px; border:1px solid var(
         <div class="kv"><span data-t="platform">פלטפורמה</span><b>PWA · HTML5</b></div>
         <div class="kv"><span data-t="storage">אחסון</span><b data-t="onDevice">במכשיר בלבד</b></div>
         <div class="kv"><span data-t="license">רישיון</span><b>© AppNest 2026</b></div>
-        <div class="kv" style="align-items:flex-start"><span data-t="credits">קרדיטים</span><b class="credits" data-t="creditsTxt">אימוג׳ים של המערכת · מוזיקה וצלילים: מסונתזים בקוד</b></div>
+        <div class="kv" style="align-items:flex-start"><span data-t="credits">קרדיטים</span><b class="credits" data-t="creditsTxt">איורים: נוצרו בכלי התמונות של OpenAI · מוזיקה וצלילים: מסונתזים בקוד</b></div>
       </div>
       <button class="btn ghost" onclick="shareApp()">🔗 <span data-t="shareApp">שתפי את המשחק</span></button>
       <button class="btn ghost" onclick="openLink('https://appnest-store.pages.dev')">🏪 <span data-t="store">חנות AppNest</span></button>
@@ -776,7 +776,7 @@ input,select{width:100%; padding:13px; border-radius:12px; border:1px solid var(
 
 <script>
 "use strict";
-const VERSION="0.1.0";
+const VERSION="0.2.0";
 
 /* ---------- storage shim ---------- */
 const mem={};
@@ -2129,7 +2129,7 @@ function roundRect(x,a,b,w,h,r){ x.beginPath(); x.moveTo(a+r,b); x.arcTo(a+w,b,a
 
 /* ---------- art: images from the design brief drop into art/<name>.webp.
    Only names listed in ART are requested; everything else shows the emoji fallback. ---------- */
-const ART=new Set([]);
+const ART=new Set(["bm_forecast", "bm_limit", "bm_rumor", "char_doctor", "char_f_hana", "char_f_mazal", "char_f_miri", "char_f_nurse", "char_f_penina", "char_f_postman", "char_f_shimon", "char_f_yankale", "char_grandma", "char_grandson", "char_pickpocket", "char_rachel", "char_scammer", "char_whisperer", "end_broke", "end_win", "ev_brag", "ev_caught_thief", "ev_doctor", "ev_grandson", "ev_lucky_cash", "ev_lucky_certificate", "ev_pick", "ev_quiet", "ev_rain", "ev_scam", "home_hero", "loc_bench", "loc_clinic", "loc_club", "loc_grocery", "loc_home", "loc_mall", "loc_market", "loc_post", "loc_salon", "map_hood", "prot_amulet", "prot_note", "prot_purse", "prot_shoes", "rank_1", "rank_2", "rank_3", "rank_4", "rank_5", "stock_antenna", "stock_bags", "stock_borekas", "stock_cane", "stock_coffee", "stock_dentures", "stock_remedy", "stock_socks", "up_bus", "up_hidden", "up_taxi", "up_walk", "veh_bus", "veh_taxi", "veh_walk"]);
 function art(name,fb,cls=''){
   if(ART.has(name)) return `<img class="art ${cls}" src="art/${name}.webp" alt="" draggable="false" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'artfb ${cls}',textContent:'${fb}'}))">`;
   return fb?`<span class="artfb ${cls}">${fb}</span>`:'';
@@ -2632,7 +2632,7 @@ L.en={
   username:"Player name", language:"Language", palette:"Color theme", theme:"Display mode", sound:"Sound", music:"Music", vibe:"Vibration",
   on:"On", off:"Off", wipe:"Erase all data", version:"Version", developer:"Developer", storage:"Storage", platform:"Platform",
   onDevice:"On device only", license:"License", shareApp:"Share the game", store:"AppNest store", feedback:"Send feedback",
-  credits:"Credits", creditsTxt:"System emoji · Music & sounds: synthesized in code",
+  credits:"Credits", creditsTxt:"Illustrations: made with OpenAI's image tool · Music & sounds: synthesized in code",
   continueBtn:"Continue", monthOver:"The {d} days are over!", startCash:"Started with", finalWorth:"Final worth",
   profit:"Net profit", seeHof:"Hall of Fame", playAgain:"Again!", toHome:"Main menu", clearHof:"Clear scores",
   debtAtEnd:"Owed to the grandson", shareResult:"Share your result", savedImage:"Image saved", you:"You", gameScreen:"Game", achTitle:"Achievements",
@@ -2814,7 +2814,7 @@ L.he={
   username:"שם השחקנית", language:"שפה", palette:"ערכת צבע", theme:"מצב תצוגה", sound:"צלילים", music:"מוזיקה", vibe:"רטט",
   on:"פעיל", off:"כבוי", wipe:"מחק את כל הנתונים", version:"גרסה", developer:"פותח", storage:"אחסון", platform:"פלטפורמה",
   onDevice:"במכשיר בלבד", license:"רישיון", shareApp:"שתפי את המשחק", store:"חנות AppNest", feedback:"שלחי משוב",
-  credits:"קרדיטים", creditsTxt:"אימוג׳ים של המערכת · מוזיקה וצלילים: מסונתזים בקוד",
+  credits:"קרדיטים", creditsTxt:"איורים: נוצרו בכלי התמונות של OpenAI · מוזיקה וצלילים: מסונתזים בקוד",
   continueBtn:"המשך", monthOver:"{d} הימים נגמרו!", startCash:"התחלת עם", finalWorth:"שווי סופי",
   profit:"רווח נקי", seeHof:"להיכל התהילה", playAgain:"עוד פעם!", toHome:"לתפריט הראשי", clearHof:"מחק שיאים",
   debtAtEnd:"חוב לנכד", shareResult:"שתפי את התוצאה", savedImage:"התמונה נשמרה", you:"את", gameScreen:"משחק", achTitle:"הישגים",
